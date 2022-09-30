@@ -39,7 +39,41 @@ namespace _3C4_TP1
         private void Login()
         {
             // TODO: effectuer la connexion ici par le bouton ou par la touche Enter
-            // App.Current.LoggedInUser = ...
+            if ((bool)teacherRadio.IsChecked)
+            {
+                foreach (var teacher in App.Current.Teachers)
+                {
+                    if (teacher.Value.Id.ToString() == usernameBox.Text.ToString())
+                    {
+                        if (teacher.Value.Password.ToString() == passwordBox.ToString())
+                        {
+                            App.Current.LoggedInUser = teacher.Value;
+                            return;
+                        }
+                    }
+                }
+                MessageBox.Show("Erreur", "Mauvais mot de passe ou non d'utilisateur", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                foreach (var student in App.Current.Students)
+                {
+                    if (student.Value.Id.ToString() == usernameBox.Text.ToString())
+                    {
+                        if (student.Value.Password.ToString() == passwordBox.ToString())
+                        {
+                            App.Current.LoggedInUser = student.Value;
+                            return;
+                        }
+                    }
+                }
+                MessageBox.Show("Erreur", "Mauvais mot de passe ou non d'utilisateur", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
+
+        private void connect_Click(object sender, RoutedEventArgs e)
+        {
+            Login();
         }
     }
 }

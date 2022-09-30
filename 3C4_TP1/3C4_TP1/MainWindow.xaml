@@ -9,9 +9,29 @@
         Height="300" 
         Width="450" 
         ResizeMode="NoResize"
-        KeyDown="Window_KeyDown">
+        KeyDown="Window_KeyDown"
+        FontSize="17">
+ 
 
-    <StackPanel>
+    <StackPanel Background="#2B2B2E">
+
+        <WrapPanel Margin="0,10,0,10" HorizontalAlignment="Center">
+            <RadioButton x:Name="studentRadio">Étudiant</RadioButton>
+            <RadioButton x:Name="teacherRadio">Enseignant</RadioButton>
+        </WrapPanel>
+        <WrapPanel Margin="0,10,100,10" HorizontalAlignment="Right">
+            <TextBlock  Margin="0,0,10,0" FontWeight="Bold" Foreground="White">Utilisateur :</TextBlock>
+            <TextBox x:Name="usernameBox" Width="150"></TextBox>
+        </WrapPanel>
+        <WrapPanel Margin="0,10,100,10" HorizontalAlignment="Right">
+            <TextBlock  Margin="0,0,10,0" FontWeight="Bold" Foreground="White">Mot de passe :</TextBlock>
+            <PasswordBox x:Name="passwordBox" Width="150"></PasswordBox>
+        </WrapPanel>
+
+        <WrapPanel Margin="0,10,0,10" HorizontalAlignment="Center">
+            <Button Click="connect_Click" x:Name="connect">Se connecter</Button>
+            <Button>Mot de passe oublié</Button>
+        </WrapPanel>
 
     </StackPanel>
 </Window>
