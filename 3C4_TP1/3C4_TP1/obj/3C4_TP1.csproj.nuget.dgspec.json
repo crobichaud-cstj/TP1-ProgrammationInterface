@@ -1,19 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< Updated upstream
-    "D:\\2181193\\Prog\\TP1-ProgrammationInterface\\3C4_TP1\\3C4_TP1\\3C4_TP1.csproj": {}
-  },
-  "projects": {
-    "D:\\2181193\\Prog\\TP1-ProgrammationInterface\\3C4_TP1\\3C4_TP1\\3C4_TP1.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "D:\\2181193\\Prog\\TP1-ProgrammationInterface\\3C4_TP1\\3C4_TP1\\3C4_TP1.csproj",
-        "projectName": "3C4_TP1",
-        "projectPath": "D:\\2181193\\Prog\\TP1-ProgrammationInterface\\3C4_TP1\\3C4_TP1\\3C4_TP1.csproj",
-        "packagesPath": "C:\\Users\\2181193\\.nuget\\packages\\",
-        "outputPath": "D:\\2181193\\Prog\\TP1-ProgrammationInterface\\3C4_TP1\\3C4_TP1\\obj\\",
-=======
     "D:\\2150658\\TP1-Prog\\TP1-ProgrammationInterface\\3C4_TP1\\3C4_TP1\\3C4_TP1.csproj": {}
   },
   "projects": {
@@ -25,13 +12,12 @@
         "projectPath": "D:\\2150658\\TP1-Prog\\TP1-ProgrammationInterface\\3C4_TP1\\3C4_TP1\\3C4_TP1.csproj",
         "packagesPath": "C:\\Users\\2150658\\.nuget\\packages\\",
         "outputPath": "D:\\2150658\\TP1-Prog\\TP1-ProgrammationInterface\\3C4_TP1\\3C4_TP1\\obj\\",
->>>>>>> Stashed changes
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\2181193\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\2150658\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
