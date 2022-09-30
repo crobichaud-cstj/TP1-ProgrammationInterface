@@ -4,25 +4,17 @@
 winexe
 C#
 .cs
-<<<<<<< Updated upstream
-D:\2181193\Prog\TP1-ProgrammationInterface\3C4_TP1\3C4_TP1\obj\Debug\net6.0-windows\
-=======
 D:\2150658\TP1-Prog\TP1-ProgrammationInterface\3C4_TP1\3C4_TP1\obj\Debug\net6.0-windows\
->>>>>>> Stashed changes
 __3C4_TP1
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-<<<<<<< Updated upstream
-D:\2181193\Prog\TP1-ProgrammationInterface\3C4_TP1\3C4_TP1\App.xaml
-=======
 D:\2150658\TP1-Prog\TP1-ProgrammationInterface\3C4_TP1\3C4_TP1\App.xaml
->>>>>>> Stashed changes
 11407045341
 
 1715850063
 1942007414746
 MainWindow.xaml;
 
-True
+False
 
