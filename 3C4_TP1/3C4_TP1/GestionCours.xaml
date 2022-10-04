@@ -6,13 +6,43 @@
         xmlns:local="clr-namespace:_3C4_TP1"
         mc:Ignorable="d"
         Title="MainWindow" 
-        Height="300" 
+        Height="Auto" 
         Width="450" 
         ResizeMode="NoResize"
-        FontSize="17">
- 
+        FontSize="17"
+        Foreground="White">
+
 
     <StackPanel Background="#2B2B2E">
+        <WrapPanel>
+            <TextBlock Margin="5,0,0,0">Évaluation :</TextBlock>
+            <ComboBox Width="100" Margin="10,0,0,0">
+            </ComboBox>
+            <Button Margin="100,0,0,0" >Ajouter évaluation</Button>
+        </WrapPanel>
+        <WrapPanel Margin="5,10,0,0">
+            <TextBlock Margin="0,0,5,0">Pondération :</TextBlock>
+            <TextBox Width="110"></TextBox>
+            <TextBlock Margin="10,0,5,0">Moyenne :</TextBlock>
+            <TextBox Width="110"></TextBox>
+        </WrapPanel>
+        <ListBox Margin="10,10,10,0" Width="auto">
+            <ListBoxItem>allo</ListBoxItem>
+            <ListBoxItem>allo</ListBoxItem>
+        </ListBox>
+
+        <WrapPanel Margin="5,10,0,0">
+            <TextBlock Margin="0,0,5,0">Identifiant :</TextBlock>
+            <TextBox Margin="0,0,0,0" Width="120"></TextBox>
+            <Button Margin="85,0,0,0">Ajouter évaluation</Button>
+        </WrapPanel>
+
+        <WrapPanel Margin="5,10,0,0">
+            <TextBlock Margin="0,0,5,0">Identifiant :</TextBlock>
+            <TextBox Margin="0,0,0,0" Width="120"></TextBox>
+            <Button Margin="85,0,0,0">Ajouter évaluation</Button>
+        </WrapPanel>
+
 
 
     </StackPanel>
