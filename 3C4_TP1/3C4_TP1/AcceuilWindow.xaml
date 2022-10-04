@@ -11,7 +11,8 @@
         ResizeMode="NoResize"
         FontSize="17">
 
-
+    <ScrollViewer>
+      
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1.5*"/>
@@ -24,37 +25,68 @@
             </Grid.RowDefinitions>
 
         <Grid Grid.Column="0" Background="#6495ED">
-            <StackPanel Grid.Row="0" >
-                <TextBlock>Binvenue,</TextBlock>
-                <TextBlock>Unknow User</TextBlock>
+            <StackPanel Grid.Row="0" Margin="5,5,0,0">
+                <TextBlock FontSize="10" Foreground="White">Binvenue,</TextBlock>
+                <TextBlock FontSize="20" Foreground="White" FontStyle="Italic" FontWeight="Bold">Unknow User</TextBlock>
             </StackPanel>
             
         </Grid>
         <Grid  Grid.Column="1" Background="#6495ED">
             <WrapPanel Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Right">
 
-                <Button>
+                <Button Margin="0,0,10,0" BorderBrush="#0169B0" Background="White"  Padding="5,5,5,5">
                     <WrapPanel>
 
-                        <Rectangle Width="20" Height="20">
+                        <Rectangle  Width="20" Height="20">
                             <Rectangle.Fill>
-                                <SolidColorBrush>Black</SolidColorBrush>
+                                <SolidColorBrush>#0169B0</SolidColorBrush>
                             </Rectangle.Fill>
                             <Rectangle.OpacityMask>
-                                <ImageBrush ImageSource="Assets\Icons\icon_group.png" />
+                                <ImageBrush ImageSource="Assets/Icons/icon_group.png" />
 
                             </Rectangle.OpacityMask>
 
                         </Rectangle>
-                        <TextBlock>Mon compte</TextBlock>
+                        <TextBlock Foreground="#0169B0" VerticalAlignment="Center" FontSize="10">Mon compte</TextBlock>
 
                     </WrapPanel>
                 </Button>
 
-                <Button>Quitter</Button>
+                <Button Margin="0,0,10,0" Padding="5,5,5,5" BorderBrush="White" Background="#6495ED">
+                    <WrapPanel >
+
+                        <Rectangle Width="20" Height="20">
+                            <Rectangle.Fill>
+                                <SolidColorBrush>White</SolidColorBrush>
+                            </Rectangle.Fill>
+                            <Rectangle.OpacityMask>
+                                <ImageBrush ImageSource="Assets/Icons/icon_home.png" />
+
+                            </Rectangle.OpacityMask>
+
+                        </Rectangle>
+                        <TextBlock Foreground="White"  VerticalAlignment="Center" FontSize="10">Quitter</TextBlock>
+
+                    </WrapPanel>
+                </Button>
+                
             </WrapPanel>
 
         </Grid>
 
-    </Grid>
+            <StackPanel Margin="5,5,0,0" Grid.Row="1">
+                <TextBlock FontSize="17" FontWeight="Bold" Foreground="#CD4D2C">Mes Cours</TextBlock>
+                <Line Stretch="Fill" Stroke="LightGray" X2="1"/>
+                <ComboBox Margin="0,5,0,0" Height="20">
+                </ComboBox>
+                <ListBox`>
+                    
+                </ListBox>
+                
+                
+            </StackPanel>
+            
+
+        </Grid>
+    </ScrollViewer>
 </Window>

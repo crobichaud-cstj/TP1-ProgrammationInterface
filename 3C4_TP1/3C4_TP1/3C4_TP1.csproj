@@ -9,6 +9,48 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <None Remove="Assets\Icons\icon_add.png" />
+	  <None Remove="Assets\Icons\icon_form.png" />
+	  <None Remove="Assets\Icons\icon_group.png" />
+	  <None Remove="Assets\Icons\icon_home.png" />
+	  <None Remove="Assets\Icons\icon_link.png" />
+	  <None Remove="Assets\Icons\icon_password_change.png" />
+	  <None Remove="Assets\Icons\icon_password_lost.png" />
+	  <None Remove="Assets\Icons\icon_restart.png" />
+	  <None Remove="Assets\Icons\icon_schedule.png" />
+	  <None Remove="Assets\Icons\icon_student.png" />
+	  <None Remove="Assets\Icons\icon_teacher.png" />
+	  <None Remove="Assets\Images\news01.jpg" />
+	  <None Remove="Assets\Images\news02.jpg" />
+	  <None Remove="Assets\Images\news03.jpg" />
+	  <None Remove="Assets\Images\news04.jpg" />
+	  <None Remove="Assets\Images\news05.jpg" />
+	  <None Remove="Assets\Images\news06.jpg" />
+	  <None Remove="Assets\Images\news07.jpg" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Resource Include="Assets\Icons\icon_add.png" />
+	  <Resource Include="Assets\Icons\icon_form.png" />
+	  <Resource Include="Assets\Icons\icon_group.png" />
+	  <Resource Include="Assets\Icons\icon_home.png" />
+	  <Resource Include="Assets\Icons\icon_link.png" />
+	  <Resource Include="Assets\Icons\icon_password_change.png" />
+	  <Resource Include="Assets\Icons\icon_password_lost.png" />
+	  <Resource Include="Assets\Icons\icon_restart.png" />
+	  <Resource Include="Assets\Icons\icon_schedule.png" />
+	  <Resource Include="Assets\Icons\icon_student.png" />
+	  <Resource Include="Assets\Icons\icon_teacher.png" />
+	  <Resource Include="Assets\Images\news01.jpg" />
+	  <Resource Include="Assets\Images\news02.jpg" />
+	  <Resource Include="Assets\Images\news03.jpg" />
+	  <Resource Include="Assets\Images\news04.jpg" />
+	  <Resource Include="Assets\Images\news05.jpg" />
+	  <Resource Include="Assets\Images\news06.jpg" />
+	  <Resource Include="Assets\Images\news07.jpg" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <Page Update="AcceuilWindow.xaml">
 	    <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
 	    <SubType>Designer</SubType>
