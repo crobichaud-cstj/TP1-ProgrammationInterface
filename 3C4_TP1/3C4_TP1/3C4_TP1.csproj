@@ -8,4 +8,12 @@
 		<UseWPF>true</UseWPF>
 	</PropertyGroup>
 
+	<ItemGroup>
+	  <Page Update="AcceuilWindow.xaml">
+	    <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+	    <SubType>Designer</SubType>
+	    <Generator>MSBuild:Compile</Generator>
+	  </Page>
+	</ItemGroup>
+
 </Project>
