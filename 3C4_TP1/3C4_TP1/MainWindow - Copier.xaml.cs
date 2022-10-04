@@ -52,7 +52,6 @@ namespace _3C4_TP1
                             var loginWindow = new MainWindow();
                             loginWindow.Hide();
                             window.Show();
-                            window.Close();
                             return;
                         }
                     }
