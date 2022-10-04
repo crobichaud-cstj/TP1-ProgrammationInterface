@@ -7,12 +7,56 @@
         mc:Ignorable="d"
         Title="Acceuil" 
         Height="300" 
-        Width="450" 
+        Width="550" 
         ResizeMode="NoResize"
         FontSize="17">
 
 
-    <StackPanel Background="#2B2B2E">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
 
-    </StackPanel>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="3.5*"/>
+            </Grid.RowDefinitions>
+
+        <Grid Grid.Column="0" Background="#6495ED">
+            <StackPanel Grid.Row="0" >
+                <TextBlock>Binvenue,</TextBlock>
+                <TextBlock>Unknow User</TextBlock>
+            </StackPanel>
+            
+        </Grid>
+        <Grid  Grid.Column="1" Background="#6495ED">
+            <WrapPanel Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Right">
+
+                <Button>
+                    <WrapPanel>
+
+                        <Rectangle Width="20" Height="20">
+                            <Rectangle.Fill>
+                                <SolidColorBrush>Black</SolidColorBrush>
+                            </Rectangle.Fill>
+                            <Rectangle.OpacityMask>
+                                <ImageBrush ImageSource="Assets\Icons\icon_group.png" />
+
+                            </Rectangle.OpacityMask>
+
+                        </Rectangle>
+
+
+                        <TextBlock>Mon compte</TextBlock>
+
+                    </WrapPanel>
+                </Button>
+
+                <Button>Quitter</Button>
+            </WrapPanel>
+
+        </Grid>
+
+    </Grid>
 </Window>
