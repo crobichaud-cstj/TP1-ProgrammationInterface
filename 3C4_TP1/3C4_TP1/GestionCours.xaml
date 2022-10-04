@@ -5,17 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_3C4_TP1"
         mc:Ignorable="d"
-        Title="GestionCours" 
+        Title="MainWindow" 
         Height="300" 
         Width="450" 
         ResizeMode="NoResize"
-        KeyDown="Window_KeyDown"
         FontSize="17">
  
 
     <StackPanel Background="#2B2B2E">
 
-      
 
     </StackPanel>
 </Window>
