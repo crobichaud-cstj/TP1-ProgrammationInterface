@@ -10,7 +10,7 @@ namespace _3C4_TP1
 {
     /// <summary>
     /// Interaction logic for App.xaml
-    /// </summary>
+    /// </summary> 
     public partial class App : Application
     {
         public static new App Current { get { return (App)Application.Current; } }

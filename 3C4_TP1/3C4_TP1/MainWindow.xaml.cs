@@ -45,9 +45,14 @@ namespace _3C4_TP1
                 {
                     if (teacher.Value.Id.ToString() == usernameBox.Text.ToString())
                     {
-                        if (teacher.Value.Password.ToString() == passwordBox.ToString())
+                        if (teacher.Value.Password.ToString() == passwordBox.Password.ToString())
                         {
                             App.Current.LoggedInUser = teacher.Value;
+                            var window = new AcceuilWindow();
+                            var loginWindow = new MainWindow();
+                            loginWindow.Hide();
+                            window.Show();
+                            window.Close();
                             return;
                         }
                     }
@@ -60,9 +65,14 @@ namespace _3C4_TP1
                 {
                     if (student.Value.Id.ToString() == usernameBox.Text.ToString())
                     {
-                        if (student.Value.Password.ToString() == passwordBox.ToString())
+                        if (student.Value.Password.ToString() == passwordBox.Password.ToString())
                         {
                             App.Current.LoggedInUser = student.Value;
+                            var window = new AcceuilWindow();
+                            var loginWindow = new MainWindow();
+                            loginWindow.Close();
+                            window.Show();
+                          
                             return;
                         }
                     }
