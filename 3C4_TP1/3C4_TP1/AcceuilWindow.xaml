@@ -36,7 +36,7 @@
                 <Button>
                     <WrapPanel>
 
-                        <!--<Rectangle Width="20" Height="20">
+                        <Rectangle Width="20" Height="20">
                             <Rectangle.Fill>
                                 <SolidColorBrush>Black</SolidColorBrush>
                             </Rectangle.Fill>
@@ -45,9 +45,7 @@
 
                             </Rectangle.OpacityMask>
 
-                        </Rectangle>-->
-
-
+                        </Rectangle>
                         <TextBlock>Mon compte</TextBlock>
 
                     </WrapPanel>
