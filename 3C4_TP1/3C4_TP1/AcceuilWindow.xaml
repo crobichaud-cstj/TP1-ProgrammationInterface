@@ -6,35 +6,35 @@
         xmlns:local="clr-namespace:_3C4_TP1"
         mc:Ignorable="d"
         Title="Acceuil" 
-        Height="300" 
-        Width="550" 
+        Height="500" 
+        Width="850" 
         ResizeMode="NoResize"
-        FontSize="17">
+        FontSize="25">
 
     <ScrollViewer>
       
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1.5*"/>
-            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="3.5*"/>
         </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
-                <RowDefinition Height="1*"/>
+                <RowDefinition Height="80px"/>
                 <RowDefinition Height="3.5*"/>
             </Grid.RowDefinitions>
 
         <Grid Grid.Column="0" Background="#6495ED">
             <StackPanel Grid.Row="0" Margin="5,5,0,0">
-                <TextBlock FontSize="10" Foreground="White">Binvenue,</TextBlock>
-                <TextBlock FontSize="20" Foreground="White" FontStyle="Italic" FontWeight="Bold">Unknow User</TextBlock>
+                <TextBlock FontSize="13" Foreground="White">Binvenue,</TextBlock>
+                <TextBlock FontSize="25" Foreground="White" FontStyle="Italic" FontWeight="Bold">Unknow User</TextBlock>
             </StackPanel>
             
         </Grid>
         <Grid  Grid.Column="1" Background="#6495ED">
             <WrapPanel Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Right">
 
-                <Button Margin="0,0,10,0" BorderBrush="#0169B0" Background="White"  Padding="5,5,5,5">
+                <Button Style="{StaticResource RoundedButtonStyle}" Margin="0,0,10,0" Background="White"  Padding="15,10,15,10">
                     <WrapPanel>
 
                         <Rectangle  Width="20" Height="20">
@@ -52,7 +52,7 @@
                     </WrapPanel>
                 </Button>
 
-                <Button Margin="0,0,10,0" Padding="5,5,5,5" BorderBrush="White" Background="#6495ED">
+                <Button Style="{StaticResource EmptyRoundedButtonStyle}" Margin="0,0,10,0" Padding="15,5,15,5" BorderBrush="White" Background="#6495ED">
                     <WrapPanel >
 
                         <Rectangle Width="20" Height="20">
@@ -75,21 +75,21 @@
         </Grid>
 
             <StackPanel Margin="5,5,0,0" Grid.Row="1">
-                <TextBlock FontSize="17" FontWeight="Bold" Foreground="#CD4D2C">Mes Cours</TextBlock>
+                <TextBlock  FontWeight="Bold" Foreground="#CD4D2C">Mes Cours</TextBlock>
                 <Line Stretch="Fill" Stroke="LightGray" X2="1"/>
                 <ComboBox Margin="0,5,0,0" Height="20">
                 </ComboBox>
-                <ListBox Margin="0,5,0,0">
+                <ListView Margin="0,5,0,0">
                     
-                </ListBox>
+                </ListView>
                 
-                <TextBlock FontSize="17" FontWeight="Bold" Foreground="#CD4D2C">Service Omnivox</TextBlock>
+                <TextBlock  FontWeight="Bold" Foreground="#CD4D2C">Service Omnivox</TextBlock>
                 <Line Stretch="Fill" Stroke="LightGray" X2="1"/>
                 
                 <Button HorizontalAlignment="Left" BorderBrush="Transparent" Background="White">
                     <WrapPanel >
 
-                        <Rectangle Width="15" Height="15">
+                        <Rectangle Width="16" Height="16">
                             <Rectangle.Fill>
                                 <SolidColorBrush>#0169B0</SolidColorBrush>
                             </Rectangle.Fill>
@@ -99,7 +99,7 @@
                             </Rectangle.OpacityMask>
 
                         </Rectangle>
-                        <TextBlock Foreground="#0169B0"  VerticalAlignment="Center" FontSize="10">Horare</TextBlock>
+                        <TextBlock Foreground="#0169B0"  VerticalAlignment="Center" FontSize="13">Horaire</TextBlock>
 
                     </WrapPanel>
                 </Button>
@@ -107,7 +107,7 @@
                 <Button HorizontalAlignment="Left" BorderBrush="Transparent" Background="White">
                     <WrapPanel >
 
-                        <Rectangle Width="15" Height="15">
+                        <Rectangle Width="16" Height="16">
                             <Rectangle.Fill>
                                 <SolidColorBrush>#0169B0</SolidColorBrush>
                             </Rectangle.Fill>
@@ -124,7 +124,7 @@
                 <Button HorizontalAlignment="Left" BorderBrush="Transparent" Background="White">
                     <WrapPanel >
 
-                        <Rectangle Width="15" Height="15">
+                        <Rectangle Width="16" Height="16">
                             <Rectangle.Fill>
                                 <SolidColorBrush>#0169B0</SolidColorBrush>
                             </Rectangle.Fill>
@@ -139,13 +139,13 @@
                     </WrapPanel>
                 </Button>
 
-                <TextBlock FontSize="17" FontWeight="Bold" Foreground="#CD4D2C">Autre Services</TextBlock>
+                <TextBlock FontWeight="Bold" Foreground="#CD4D2C">Autre Services</TextBlock>
                 <Line Stretch="Fill" Stroke="LightGray" X2="1"/>
 
-                <Button HorizontalAlignment="Left" BorderBrush="Transparent" Background="White">
+                <Button   HorizontalAlignment="Left" BorderBrush="Transparent" Background="White">
                     <WrapPanel >
 
-                        <Rectangle Width="15" Height="15">
+                        <Rectangle Width="16" Height="16">
                             <Rectangle.Fill>
                                 <SolidColorBrush>#0169B0</SolidColorBrush>
                             </Rectangle.Fill>
@@ -160,10 +160,10 @@
                     </WrapPanel>
                 </Button>
 
-                <Button HorizontalAlignment="Left" BorderBrush="Transparent" Background="White">
+                <Button  HorizontalAlignment="Left" BorderBrush="Transparent" Background="White">
                     <WrapPanel >
 
-                        <Rectangle Width="15" Height="15">
+                        <Rectangle Width="16" Height="16">
                             <Rectangle.Fill>
                                 <SolidColorBrush>#0169B0</SolidColorBrush>
                             </Rectangle.Fill>
@@ -173,14 +173,65 @@
                             </Rectangle.OpacityMask>
 
                         </Rectangle>
-                        <TextBlock Foreground="#0169B0"  VerticalAlignment="Center" FontSize="10">Horare</TextBlock>
+                        <TextBlock Foreground="#0169B0"  VerticalAlignment="Center" FontSize="10">Connexion portail Office 365</TextBlock>
+
+                    </WrapPanel>
+                </Button>
+                <Button  HorizontalAlignment="Left" BorderBrush="Transparent" Background="White">
+                    <WrapPanel >
+
+                        <Rectangle Width="16" Height="16">
+                            <Rectangle.Fill>
+                                <SolidColorBrush>#0169B0</SolidColorBrush>
+                            </Rectangle.Fill>
+                            <Rectangle.OpacityMask>
+                                <ImageBrush ImageSource="Assets/Icons/icon_link.png" />
+
+                            </Rectangle.OpacityMask>
+
+                        </Rectangle>
+                        <TextBlock Foreground="#0169B0"  VerticalAlignment="Center" FontSize="10">Moodle</TextBlock>
+
+                    </WrapPanel>
+                </Button>
+                <Button  HorizontalAlignment="Left" BorderBrush="Transparent" Background="White">
+                    <WrapPanel >
+
+                        <Rectangle Width="16" Height="16">
+                            <Rectangle.Fill>
+                                <SolidColorBrush>#0169B0</SolidColorBrush>
+                            </Rectangle.Fill>
+                            <Rectangle.OpacityMask>
+                                <ImageBrush ImageSource="Assets/Icons/icon_link.png" />
+
+                            </Rectangle.OpacityMask>
+
+                        </Rectangle>
+                        <TextBlock Foreground="#0169B0"  VerticalAlignment="Center" FontSize="10">Octopus - Demande de service</TextBlock>
+
+                    </WrapPanel>
+                </Button>
+                <Button  HorizontalAlignment="Left" BorderBrush="Transparent" Background="White">
+                    <WrapPanel >
+
+                        <Rectangle Width="16" Height="16">
+                            <Rectangle.Fill>
+                                <SolidColorBrush>#0169B0</SolidColorBrush>
+                            </Rectangle.Fill>
+                            <Rectangle.OpacityMask>
+                                <ImageBrush ImageSource="Assets/Icons/icon_link.png" />
+
+                            </Rectangle.OpacityMask>
+
+                        </Rectangle>
+                        <TextBlock Foreground="#0169B0"  VerticalAlignment="Center" FontSize="10">Remise des travaux</TextBlock>
 
                     </WrapPanel>
                 </Button>
                 <Button HorizontalAlignment="Left" BorderBrush="Transparent" Background="White">
                     <WrapPanel >
 
-                        <Rectangle Width="15" Height="15">
+                        <Rectangle Width="16" Height="16">
                             <Rectangle.Fill>
                                 <SolidColorBrush>#0169B0</SolidColorBrush>
                             </Rectangle.Fill>
@@ -190,14 +241,31 @@
                             </Rectangle.OpacityMask>
 
                         </Rectangle>
-                        <TextBlock Foreground="#0169B0"  VerticalAlignment="Center" FontSize="10">Horare</TextBlock>
+                        <TextBlock Foreground="#0169B0"  VerticalAlignment="Center" FontSize="10">Repro +</TextBlock>
+
+                    </WrapPanel>
+                </Button>
+                <Button   HorizontalAlignment="Left" BorderBrush="Transparent" Background="White">
+                    <WrapPanel >
+
+                        <Rectangle Width="16" Height="16">
+                            <Rectangle.Fill>
+                                <SolidColorBrush>#0169B0</SolidColorBrush>
+                            </Rectangle.Fill>
+                            <Rectangle.OpacityMask>
+                                <ImageBrush ImageSource="Assets/Icons/icon_link.png" />
+
+                            </Rectangle.OpacityMask>
+
+                        </Rectangle>
+                        <TextBlock Foreground="#0169B0" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="10">Service du développement pédagogique</TextBlock>
 
                     </WrapPanel>
                 </Button>
                 <Button HorizontalAlignment="Left" BorderBrush="Transparent" Background="White">
                     <WrapPanel >
 
-                        <Rectangle Width="15" Height="15">
+                        <Rectangle Width="16" Height="16">
                             <Rectangle.Fill>
                                 <SolidColorBrush>#0169B0</SolidColorBrush>
                             </Rectangle.Fill>
@@ -207,14 +275,14 @@
                             </Rectangle.OpacityMask>
 
                         </Rectangle>
-                        <TextBlock Foreground="#0169B0"  VerticalAlignment="Center" FontSize="10">Horare</TextBlock>
+                        <TextBlock Foreground="#0169B0"  VerticalAlignment="Center" FontSize="10">SIP</TextBlock>
 
                     </WrapPanel>
                 </Button>
-                <Button HorizontalAlignment="Left" BorderBrush="Transparent" Background="White">
+                <Button  HorizontalAlignment="Left" BorderBrush="Transparent" Background="White">
                     <WrapPanel >
 
-                        <Rectangle Width="15" Height="15">
+                        <Rectangle Width="16" Height="16">
                             <Rectangle.Fill>
                                 <SolidColorBrush>#0169B0</SolidColorBrush>
                             </Rectangle.Fill>
@@ -224,80 +292,49 @@
                             </Rectangle.OpacityMask>
 
                         </Rectangle>
-                        <TextBlock Foreground="#0169B0"  VerticalAlignment="Center" FontSize="10">Horare</TextBlock>
-
-                    </WrapPanel>
-                </Button>
-                <Button HorizontalAlignment="Left" BorderBrush="Transparent" Background="White">
-                    <WrapPanel >
-
-                        <Rectangle Width="15" Height="15">
-                            <Rectangle.Fill>
-                                <SolidColorBrush>#0169B0</SolidColorBrush>
-                            </Rectangle.Fill>
-                            <Rectangle.OpacityMask>
-                                <ImageBrush ImageSource="Assets/Icons/icon_link.png" />
-
-                            </Rectangle.OpacityMask>
-
-                        </Rectangle>
-                        <TextBlock Foreground="#0169B0"  VerticalAlignment="Center" FontSize="10">Horare</TextBlock>
-
-                    </WrapPanel>
-                </Button>
-                <Button HorizontalAlignment="Left" BorderBrush="Transparent" Background="White">
-                    <WrapPanel >
-
-                        <Rectangle Width="15" Height="15">
-                            <Rectangle.Fill>
-                                <SolidColorBrush>#0169B0</SolidColorBrush>
-                            </Rectangle.Fill>
-                            <Rectangle.OpacityMask>
-                                <ImageBrush ImageSource="Assets/Icons/icon_link.png" />
-
-                            </Rectangle.OpacityMask>
-
-                        </Rectangle>
-                        <TextBlock Foreground="#0169B0"  VerticalAlignment="Center" FontSize="10">Horare</TextBlock>
-
-                    </WrapPanel>
-                </Button>
-                <Button HorizontalAlignment="Left" BorderBrush="Transparent" Background="White">
-                    <WrapPanel >
-
-                        <Rectangle Width="15" Height="15">
-                            <Rectangle.Fill>
-                                <SolidColorBrush>#0169B0</SolidColorBrush>
-                            </Rectangle.Fill>
-                            <Rectangle.OpacityMask>
-                                <ImageBrush ImageSource="Assets/Icons/icon_link.png" />
-
-                            </Rectangle.OpacityMask>
-
-                        </Rectangle>
-                        <TextBlock Foreground="#0169B0"  VerticalAlignment="Center" FontSize="10">Horare</TextBlock>
-
-                    </WrapPanel>
-                </Button>
-                <Button HorizontalAlignment="Left" BorderBrush="Transparent" Background="White">
-                    <WrapPanel >
-
-                        <Rectangle Width="15" Height="15">
-                            <Rectangle.Fill>
-                                <SolidColorBrush>#0169B0</SolidColorBrush>
-                            </Rectangle.Fill>
-                            <Rectangle.OpacityMask>
-                                <ImageBrush ImageSource="Assets/Icons/icon_link.png" />
-
-                            </Rectangle.OpacityMask>
-
-                        </Rectangle>
-                        <TextBlock Foreground="#0169B0"  VerticalAlignment="Center" FontSize="10">Horare</TextBlock>
+                        <TextBlock Foreground="#0169B0"  VerticalAlignment="Center" FontSize="10">Travail - Santé - Vie</TextBlock>
 
                     </WrapPanel>
                 </Button>
 
             </StackPanel>
+
+            <WrapPanel Margin="5,5,0,0" Grid.Row="1" Grid.Column="1">
+                <TextBlock  FontWeight="Bold" Foreground="#CD4D2C">Actualités</TextBlock>
+                <Line Stretch="Fill" Stroke="LightGray" X2="1"/>
+
+                <Button Margin="20,10,25,10" Width="250">
+                    <StackPanel>
+                        <Image Source="/Assets/Images/news01.jpg"/>
+
+                        <StackPanel Margin="0,6,0,0" Background="White">
+                            <TextBlock Padding="5,5,5,5" Foreground="#0169B0"   FontSize="12" TextWrapping="Wrap">
+                            Formulaire - Changement de programme - Tour 1
+
+                            </TextBlock>
+                            <TextBlock Padding="5,5,5,5" FontStyle="Italic"   FontSize="11" TextWrapping="Wrap">
+                            29 septembre 2021
+
+                            </TextBlock>
+                        </StackPanel>
+                        
+                        
+                        
+                    </StackPanel>
+                </Button>
+
+                <Button Margin="0,10,0,10" Width="250">
+                    <StackPanel>
+                        <Image Source="/Assets/Images/news01.jpg"/>
+
+                        <TextBlock Margin="0,6,0,0" Background="White" FontSize="14" TextWrapping="Wrap">
+                            Formulaire - Changement de programme - Tour 1
+                        </TextBlock>
+                    </StackPanel>
+                </Button>
+
+
+            </WrapPanel>
             
 
         </Grid>
