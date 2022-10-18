@@ -23,7 +23,22 @@ namespace _3C4_TP1
         public AcceuilWindow()
         {
             InitializeComponent();
+
+
+
         }
+
+        private void Horaire(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CahngerMDP(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
 
     }
 }
