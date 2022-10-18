@@ -24,7 +24,7 @@ namespace _3C4_TP1
         {
             InitializeComponent();
 
-
+           // App.Current.Courses
 
         }
 
