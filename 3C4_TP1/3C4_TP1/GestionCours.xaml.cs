@@ -20,9 +20,22 @@ namespace _3C4_TP1
     /// </summary>
     public partial class GestionCours : Window
     {
-        public GestionCours()
+        public GestionCours(Course course)
         {
             InitializeComponent();
+
+            Evaluation evaCurrent = course.Evaluations[0];
+
+            foreach (Evaluation eva in course.Evaluations)
+            {
+                comboboxEva.Items.Add(eva.Name);
+            }
+            comboboxEva.SelectedIndex = 0;
+
+            Ponde.Text = evaCurrent.Value.ToString();
+
+
+            
 
         }
 

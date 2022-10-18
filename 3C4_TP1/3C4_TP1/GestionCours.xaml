@@ -17,15 +17,15 @@
     <StackPanel Background="#2B2B2E">
         <WrapPanel Margin="7,10,0,0">
             <TextBlock >Évaluation :</TextBlock>
-            <ComboBox Width="180" Margin="10,0,0,0">
+            <ComboBox x:Name="comboboxEva" Width="180" Margin="10,0,0,0">
             </ComboBox>
             <Button Margin="130,0,0,0" >Ajouter évaluation</Button>
         </WrapPanel>
         <WrapPanel Margin="7,10,0,0">
             <TextBlock Margin="0,0,5,0">Pondération :</TextBlock>
-            <TextBox Width="190"></TextBox>
+            <TextBox x:Name="Ponde"  Width="190"></TextBox>
             <TextBlock Margin="10,0,5,0" IsEnabled="False">Moyenne :</TextBlock>
-            <TextBox Width="190"></TextBox>
+            <TextBox x:Name="Moyen" Width="190"></TextBox>
         </WrapPanel>
         <ListBox Margin="7,10,5,0" Width="auto">
             
@@ -33,18 +33,18 @@
 
         <WrapPanel Margin="7,10,0,0">
             <TextBlock >Identifiant :</TextBlock>
-            <TextBox Margin="10,0,15,0" Height="40" Width="190"></TextBox>
+            <TextBox x:Name="Iden" Margin="10,0,15,0" Height="40" Width="190"></TextBox>
             <Button Margin="105,0,0,0">Ajouter évaluation</Button>
         </WrapPanel>
 
         <WrapPanel Margin="5,10,0,0">
             <TextBlock IsEnabled="False" >Nom :</TextBlock>
-            <TextBox Margin="52,0,40,0" Height="40" Width="190"></TextBox>
+            <TextBox x:Name="Nom"  Margin="52,0,40,0" Height="40" Width="190"></TextBox>
             <TextBlock IsEnabled="False" >Prénom :</TextBlock>
-            <TextBox Margin="10,0,0,0" Height="40" Width="190"></TextBox>
+            <TextBox x:Name="Prenom" Margin="10,0,0,0" Height="40" Width="190"></TextBox>
         </WrapPanel>
         <WrapPanel Margin="5,10,0,0">
-            <TextBlock >Résultat de l'étudiant :</TextBlock>
+            <TextBlock>Résultat de l'étudiant :</TextBlock>
             
         </WrapPanel>
 
