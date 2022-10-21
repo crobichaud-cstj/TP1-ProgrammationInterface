@@ -49,8 +49,7 @@ namespace _3C4_TP1
                         {
                             App.Current.LoggedInUser = teacher.Value;
                             var window = new AcceuilWindow();
-                            var loginWindow = new MainWindow();
-                            loginWindow.Hide();
+                            Close();
                             window.Show();
                             return;
                         }
