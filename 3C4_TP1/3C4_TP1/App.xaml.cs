@@ -205,7 +205,7 @@ namespace _3C4_TP1
         public Dictionary<int, Teacher> Teachers { get => _teachers; }
         private readonly Dictionary<int, Teacher> _teachers = new Dictionary<int, Teacher>()
         {
-            { 1001, new Teacher() { Id = 1001, FirstName = "Mael", LastName = "Perreault", Password = "mperreault" } },
+            { 1001, new Teacher() { Id = 1001, FirstName = "Mael", LastName = "Perreault", Password = "mp" } },//mperreault
             { 1002, new Teacher() { Id = 1002, FirstName = "Yannick", LastName = "Charron", Password = "ycharron" } },
             { 1003, new Teacher() { Id = 1003, FirstName = "Karine", LastName = "Moreau", Password = "kmoreau"  } },
             { 1004, new Teacher() { Id = 1004, FirstName = "Robert", LastName = "Turenne", Password = "rturenne" } },

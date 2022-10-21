@@ -27,7 +27,7 @@
         <Grid Grid.Column="0" Background="#6495ED">
             <StackPanel Grid.Row="0" Margin="5,5,0,0">
                 <TextBlock FontSize="13" Foreground="White">Binvenue,</TextBlock>
-                <TextBlock FontSize="25" Foreground="White" FontStyle="Italic" FontWeight="Bold">Unknow User</TextBlock>
+                    <TextBlock FontSize="25" x:Name="PrenomNom"  Foreground="White" FontStyle="Italic" FontWeight="Bold"></TextBlock>
             </StackPanel>
             
         </Grid>
@@ -77,9 +77,9 @@
             <StackPanel Margin="5,5,0,0" Grid.Row="1">
                 <TextBlock  FontWeight="Bold" Foreground="#CD4D2C">Mes Cours</TextBlock>
                 <Line Stretch="Fill" Stroke="LightGray" X2="1"/>
-                <ComboBox Margin="0,5,0,0" Height="20">
+                <ComboBox SelectionChanged="ComboBoxSemester_SelectionCanged" x:Name="ComboBoxSemester" Margin="0,5,0,0" Height="20">
                 </ComboBox>
-                <ListView x:Name="ListView1" Margin="0,5,0,0">
+                <ListView SelectionChanged="ListView1_SelectionChanged" x:Name="ListView1" Margin="0,5,0,0">
                     
                 </ListView>
                 
