@@ -20,25 +20,61 @@ namespace _3C4_TP1
     /// </summary>
     public partial class GestionCours : Window
     {
+        Course currentCourse = new Course();
+        Evaluation currentEva = new Evaluation();
+        int totalExam = 0;
+        int nbExam = 0;
         public GestionCours(Course course)
         {
             InitializeComponent();
 
-            Evaluation evaCurrent = course.Evaluations[0];
+            currentEva = course.Evaluations[0];
+            currentCourse = course;
 
-            foreach (Evaluation eva in course.Evaluations)
+            foreach (Evaluation eva in currentCourse.Evaluations)
             {
                 comboboxEva.Items.Add(eva.Name);
             }
             comboboxEva.SelectedIndex = 0;
 
-            Ponde.Text = evaCurrent.Value.ToString();
-
-
+            UpdateOnExam();
             
-
         }
 
-        
+
+
+        private void UpdateOnExam()
+        {
+            listStud.Items.Clear();
+            Ponde.Text = currentEva.Value.ToString();
+
+            nbExam = 0;
+            totalExam = 0;
+
+            foreach (var s in currentCourse.StudentIds)
+            {
+                string str = s.ToString() + " - ";
+                str += App.Current.Students[s].FirstName + ", ";
+                str += App.Current.Students[s].LastName + " ";
+                str += App.Current.Students[s].LastName + " - ";
+                str += +currentEva.StudentResults[s];
+                totalExam += currentEva.StudentResults[s];
+                nbExam++;
+                listStud.Items.Add(str);
+            }
+            Moyen.Text = (totalExam / nbExam).ToString();
+        }
+
+        private void comboboxEva_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            foreach (Evaluation eva in currentCourse.Evaluations )
+            {
+                if (eva.Name == comboboxEva.SelectedItem)
+                {
+                    currentEva = eva;
+                }
+            }
+            UpdateOnExam();
+        }
     }
 }

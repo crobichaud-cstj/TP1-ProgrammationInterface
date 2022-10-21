@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" 
         Height="Auto" 
-        Width="625" 
+        Width="635" 
         ResizeMode="NoResize"
         FontSize="17"
         Foreground="White"
@@ -17,7 +17,7 @@
     <StackPanel Background="#2B2B2E">
         <WrapPanel Margin="7,10,0,0">
             <TextBlock >Évaluation :</TextBlock>
-            <ComboBox x:Name="comboboxEva" Width="180" Margin="10,0,0,0">
+            <ComboBox SelectionChanged="comboboxEva_SelectionChanged" x:Name="comboboxEva" Width="180" Margin="10,0,0,0">
             </ComboBox>
             <Button Margin="130,0,0,0" >Ajouter évaluation</Button>
         </WrapPanel>
@@ -27,7 +27,7 @@
             <TextBlock Margin="10,0,5,0" IsEnabled="False">Moyenne :</TextBlock>
             <TextBox x:Name="Moyen" Width="190"></TextBox>
         </WrapPanel>
-        <ListBox Margin="7,10,5,0" Width="auto">
+        <ListBox x:Name="listStud" Margin="7,10,5,0" Width="auto">
             
         </ListBox>
 
