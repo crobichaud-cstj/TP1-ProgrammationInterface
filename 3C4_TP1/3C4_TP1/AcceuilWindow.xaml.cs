@@ -75,7 +75,17 @@ namespace _3C4_TP1
             }
         }
 
-
-
+        private void ListView1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            foreach (var c in App.Current.Courses)
+            {
+                if (c.Id == ListView1.SelectedItem)
+                {
+                    var window = new GestionCours(c);
+                    window.Show();
+                }
+            }
+            
+        }
     }
 }
