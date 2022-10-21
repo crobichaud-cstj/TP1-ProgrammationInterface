@@ -37,6 +37,10 @@ namespace _3C4_TP1
 
             updateCombox();
 
+            Horaire.Click += Horaire_Click;
+            ChangerMDP.Click += ChangerMDP_Click;
+            ResMDP.Click += ResMDP_Click;
+            Quit.Click += Quit_Click;
 
 
 
@@ -49,14 +53,26 @@ namespace _3C4_TP1
             updateCombox();
         }
 
-        private void Horaire(object sender, RoutedEventArgs e)
+        private void Horaire_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show("TODO", "TODO", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+        
+        private void Quit_Click(object sender, RoutedEventArgs e)
+        {
+           
+            var window = new MainWindow();
+            window.Show();
+            Close();
+        }
+        private void ChangerMDP_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("TODO", "TODO", MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
-        private void CahngerMDP(object sender, RoutedEventArgs e)
+        private void ResMDP_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show("TODO", "TODO", MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
         private void updateCombox()
