@@ -25,15 +25,15 @@
         <StackPanel Orientation="Horizontal" Margin="0,10,0,10" HorizontalAlignment="Center">
             <Line X1="400" Stroke="White" StrokeThickness="2" />
         </StackPanel>
-        <WrapPanel Margin="0,10,15,10" HorizontalAlignment="Right">
+        <WrapPanel Margin="0,10,15,5" HorizontalAlignment="Right">
             <TextBlock  Margin="0,0,10,0" FontWeight="Bold" Foreground="White">Ancien mot de passe :</TextBlock>
             <TextBox x:Name="OldpassBox" Width="200"></TextBox>
         </WrapPanel>
-        <WrapPanel Margin="0,10,15,10" HorizontalAlignment="Right">
+        <WrapPanel Margin="0,0,15,5" HorizontalAlignment="Right">
             <TextBlock  Margin="0,0,10,0" FontWeight="Bold" Foreground="White">Nouveau mot de passe :</TextBlock>
             <TextBox x:Name="newPassBox" Width="200"></TextBox>
         </WrapPanel>
-        <WrapPanel Margin="0,10,15,10" HorizontalAlignment="Right">
+        <WrapPanel Margin="0,0,15,10" HorizontalAlignment="Right">
             <TextBlock  Margin="0,0,10,0" FontWeight="Bold" Foreground="White">Confirmer :</TextBlock>
             <PasswordBox x:Name="confPassBox" Width="200"></PasswordBox>
         </WrapPanel>

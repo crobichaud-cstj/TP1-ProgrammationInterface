@@ -18,9 +18,9 @@ namespace _3C4_TP1
     /// <summary>
     /// Interaction logic for LoginWindow.xaml
     /// </summary>
-    public partial class ChangerMotDePasse : Window
+    public partial class RenitialiserMotDePasse : Window
     {
-        public ChangerMotDePasse()
+        public RenitialiserMotDePasse()
         {
             InitializeComponent();
 
