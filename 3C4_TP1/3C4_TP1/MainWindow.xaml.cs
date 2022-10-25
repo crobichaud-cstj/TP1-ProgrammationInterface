@@ -57,7 +57,7 @@ namespace _3C4_TP1
                 }
                 MessageBox.Show("Erreur", "Mauvais mot de passe ou non d'utilisateur", MessageBoxButton.OK, MessageBoxImage.Information);
             }
-            else
+            else if ((bool)teacherRadio.IsChecked)
             {
                 foreach (var student in App.Current.Students)
                 {
@@ -67,14 +67,28 @@ namespace _3C4_TP1
                         {
                             App.Current.LoggedInUser = student.Value;
                             var window = new AcceuilWindow();
-                            var loginWindow = new MainWindow();
-                            loginWindow.Close();
                             window.Show();
-                          
+
                             return;
                         }
                     }
                 }
+            }
+            else
+            {
+                var admin = App.Current.Admin;
+                if (admin.LastName == usernameBox.Text.ToString() || "admin" == usernameBox.Text.ToString())
+                {
+                    if (admin.LastName.ToLower() == passwordBox.Password.ToString())
+                    {
+                        App.Current.LoggedInUser = admin;
+                        var window = new AdminWindow();
+                        window.Show();
+
+                        return;
+                    }
+                }
+
                 MessageBox.Show("Erreur", "Mauvais mot de passe ou non d'utilisateur", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }

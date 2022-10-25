@@ -86,7 +86,7 @@ namespace _3C4_TP1
                 {
                     if (d.Semester.ToString() == ComboBoxSemester.SelectedValue.ToString())
                     {
-                        ListView1.Items.Add(d.Id);
+                        ListView1.Items.Add(d.Id + " - gr. " + d.Group.ToString("D3"));
                     }
 
                 }
