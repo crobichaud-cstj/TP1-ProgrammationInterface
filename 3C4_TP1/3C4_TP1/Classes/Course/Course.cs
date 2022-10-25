@@ -14,5 +14,12 @@ namespace _3C4_TP1
         public List<Lesson> CourseLessons = new List<Lesson>();         // Prestations de cours dans la semaine
         public List<int> StudentIds = new List<int>();                  // Etudiants qui sont presentement inscrit au cours
         public List<Evaluation> Evaluations = new List<Evaluation>();   // Evaluation du cours avec les resultats
+
+        public override string ToString()
+        {
+            return Id + " - gr. " + Group;
+        }
     }
+
+
 }
