@@ -26,6 +26,34 @@ namespace _3C4_TP1
 
         }
 
- 
+        private void change_Click(object sender, RoutedEventArgs e)
+        {
+            if(App.Current.LoggedInUser.Password == OldpassBox.Password.ToString())
+            {
+                if (newPassBox.Password.ToString() == confPassBox.Password.ToString() && newPassBox.Password.ToString() != null && confPassBox.Password.ToString() != null)
+                {
+                    if (MessageBox.Show("Are you sure you want to change the password, the old password will be lost?",
+                        "Confirmation", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                    {
+                        App.Current.LoggedInUser.Password = newPassBox.Password.ToString();
+                        Close();
+                    }                 
+                }
+                else
+                {
+
+                MessageBox.Show("Password arn't matching", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show( "Password arn't matching", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void annuler_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }
