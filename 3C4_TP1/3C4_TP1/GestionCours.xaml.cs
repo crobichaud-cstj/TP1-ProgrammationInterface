@@ -1,17 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace _3C4_TP1
 {
@@ -63,9 +54,8 @@ namespace _3C4_TP1
                 {
                     students.Add(App.Current.Students[s]);
                     string str = s.ToString() + " - ";
-                    str += App.Current.Students[s].FirstName + ", ";
-                    str += App.Current.Students[s].LastName + " ";
-                    str += App.Current.Students[s].LastName + " - ";
+                    str += App.Current.Students[s].LastName + ", ";
+                    str += App.Current.Students[s].FirstName + " - ";
                     str += +currentEva.StudentResults[s];
                     totalExam += currentEva.StudentResults[s];
                     nbExam++;
@@ -83,9 +73,53 @@ namespace _3C4_TP1
 
         private void updateOnStudent()
         {
-            Iden.Text = currentStudent.Id.ToString();
-            Nom.Text = currentStudent.LastName;
-            Prenom.Text = currentStudent.FirstName;
+            if (currentStudent != null)
+            {
+
+
+                Iden.Text = currentStudent.Id.ToString();
+                Nom.Text = currentStudent.LastName;
+                Prenom.Text = currentStudent.FirstName;
+                string resultStr = "";
+
+
+
+                int totalResult = 0;
+                int totalPond = 0;
+                int totalMoyen = 0;
+
+                foreach (Evaluation eva in currentCourse.Evaluations)
+                {
+                    int total = 0;
+                    int nb = 0;
+                    string moyen = "";
+                    foreach (var s in currentCourse.StudentIds)
+                    {
+                        if (eva.StudentResults[s] != null)
+                        {
+                            total += eva.StudentResults[s];
+                            nb++;
+                        }
+                    }
+                    totalResult += eva.StudentResults[currentStudent.Id];
+                    totalMoyen += (total / nb);
+                    totalPond += eva.Value;
+
+                    moyen = (total / nb).ToString();
+
+                    resultStr += eva.Name + "\t" + eva.StudentResults[currentStudent.Id] + "/" + eva.Value + "\t Moyenne : " + moyen + "\n";
+
+                }
+                resultStr += "Total\t" + totalResult + "/" + totalPond + "\t Moyenne : " + totalMoyen;
+
+                result.Text = resultStr;
+            }
+            else
+            {
+                Prenom.Text = "";
+                Nom.Text = "";
+                result.Text = "";
+            }
         }
 
         private void comboboxEva_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -104,11 +138,57 @@ namespace _3C4_TP1
         {
             foreach (Student stu in students)
             {
-                if (stu.Id.ToString() == listStud.SelectedItem.ToString().Take(8))
+                string strId = listStud.SelectedItem.ToString().Substring(0, 8);
+                if (stu.Id.ToString() == strId )
                 {
                     currentStudent = stu;
                 }
             }
+            updateOnStudent();
+        }
+
+        private void Iden_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            bool exist = false;
+            foreach (Student stu in students)
+            {
+                if (stu.Id.ToString() == Iden.Text)
+                {
+                    currentStudent = stu;
+                    exist = true;
+                }
+            }
+            if (!exist)
+            {
+                currentStudent = null;
+            }
+            updateOnStudent();
+        }
+
+        private void Ponde_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            foreach (Course course in App.Current.Courses)
+            {
+                if (course == currentCourse)
+                {
+                    foreach (Evaluation evaluation in course.Evaluations)
+                    {
+                        if (evaluation == currentEva && Ponde.Text.Count() <3)
+                        {
+                            if (Ponde.Text.Count() == 0)
+                            {
+                                Ponde.Text = "0";
+                            }
+                            currentEva = evaluation;
+                            evaluation.Value = Int32.Parse(Ponde.Text);
+                            
+                        }
+                        
+                    }
+                }
+            }
+            
+            updateOnExam();
             updateOnStudent();
         }
     }
