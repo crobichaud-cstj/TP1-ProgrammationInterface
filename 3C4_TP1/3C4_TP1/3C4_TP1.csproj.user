@@ -13,6 +13,12 @@
     <Page Update="AdminWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="ModifierEnseignant.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ModifierEtudiant.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="RenitialiserMotDePasse.xaml">
       <SubType>Designer</SubType>
     </Page>

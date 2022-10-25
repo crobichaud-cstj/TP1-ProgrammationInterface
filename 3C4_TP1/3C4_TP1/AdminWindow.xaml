@@ -9,7 +9,7 @@
         Height="350" 
         Width="300" 
         ResizeMode="NoResize"
-        FontSize="17"
+        FontSize="15"
         Style="{StaticResource DefaultWindowStyle}">
 
 
@@ -17,19 +17,19 @@
 
 
         <WrapPanel Margin="0,10,15,5" HorizontalAlignment="Center">
-            <Button Padding="70,10,70,10" >Rénitialiser</Button>
+            <Button Width="250"  Click="modifEtu_Click">Modifier les étudiants</Button>
         </WrapPanel>
         <WrapPanel Margin="0,0,15,5" HorizontalAlignment="Center">
-            <Button Padding="70,10,70,10">Rénitialiser</Button>
+            <Button Width="250" Click="modifEnsei_Click" >Modifier les enseignants</Button>
         </WrapPanel>
         <WrapPanel Margin="0,0,15,10" HorizontalAlignment="Center">
-            <Button Padding="70,10,70,10" >Rénitialiser</Button>
+            <Button Width="250" Click="bonus_Click" >Bonus</Button>
         </WrapPanel>
         <StackPanel Orientation="Horizontal" Margin="0,10,0,10" HorizontalAlignment="Center">
             <Line X1="400" Stroke="White" StrokeThickness="2" />
         </StackPanel>
         <WrapPanel Margin="0,10,0,10" HorizontalAlignment="Center">
-            <Button  Padding="70,10,70,10"  Style="{StaticResource EmptyRoundedButtonStyle}">Quitter</Button>
+            <Button  Width="250" Click="quit_Click"  Style="{StaticResource EmptyRoundedButtonStyle}">Quitter</Button>
         </WrapPanel>
 
     </StackPanel>
