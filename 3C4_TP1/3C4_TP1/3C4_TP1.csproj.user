@@ -10,7 +10,13 @@
     <Page Update="AcceuilWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="AddResult.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="AdminWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AddEva.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="RenitialiserMotDePasse.xaml">

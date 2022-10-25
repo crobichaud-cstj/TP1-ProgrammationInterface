@@ -191,5 +191,17 @@ namespace _3C4_TP1
             updateOnExam();
             updateOnStudent();
         }
+
+        private void addEva_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new AddEva(currentCourse);
+            window.Show();
+        }
+
+        private void addResult_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new AddResult();
+            window.Show();
+        }
     }
 }
