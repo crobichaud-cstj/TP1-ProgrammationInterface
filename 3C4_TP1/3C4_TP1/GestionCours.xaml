@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:_3C4_TP1"
         mc:Ignorable="d"
         Title="MainWindow" 
-        Height="Auto" 
+        Height="550" 
         Width="635" 
         ResizeMode="NoResize"
         FontSize="17"
@@ -17,24 +17,24 @@
     <StackPanel Background="#2B2B2E">
         <WrapPanel Margin="7,10,0,0">
             <TextBlock >Évaluation :</TextBlock>
-            <ComboBox SelectionChanged="comboboxEva_SelectionChanged" x:Name="comboboxEva" Width="180" Margin="10,0,0,0">
+            <ComboBox VerticalAlignment="Center" SelectionChanged="comboboxEva_SelectionChanged" x:Name="comboboxEva" Width="180" Margin="10,0,0,0">
             </ComboBox>
             <Button Margin="130,0,0,0" >Ajouter évaluation</Button>
         </WrapPanel>
         <WrapPanel Margin="7,10,0,0">
             <TextBlock Margin="0,0,5,0">Pondération :</TextBlock>
-            <TextBox x:Name="Ponde"  Width="190"></TextBox>
+            <TextBox TextChanged="Ponde_TextChanged" x:Name="Ponde"  Width="190"></TextBox>
             <TextBlock Margin="10,0,5,0" IsEnabled="False">Moyenne :</TextBlock>
-            <TextBox x:Name="Moyen" Width="190"></TextBox>
+            <TextBox  IsEnabled="False" x:Name="Moyen" Width="190"></TextBox>
         </WrapPanel>
-        <ListBox SelectionChanged="listStud_SelectionChanged" x:Name="listStud" Margin="7,10,5,0" Width="auto">
+        <ListBox Height="130" SelectionChanged="listStud_SelectionChanged" x:Name="listStud" Margin="7,10,5,0" Width="auto">
             
         </ListBox>
 
         <WrapPanel Margin="7,10,0,0">
             <TextBlock >Identifiant :</TextBlock>
-            <TextBox x:Name="Iden" Margin="10,0,15,0" Height="40" Width="190"></TextBox>
-            <Button Margin="105,0,0,0">Ajouter évaluation</Button>
+            <TextBox TextChanged="Iden_TextChanged" x:Name="Iden" Margin="10,0,15,0" Height="40" Width="190"></TextBox>
+            <Button Margin="105,0,0,0">Ajouter résultat</Button>
         </WrapPanel>
 
         <WrapPanel Margin="5,10,0,0">
@@ -45,7 +45,9 @@
         </WrapPanel>
         <WrapPanel Margin="5,10,0,0">
             <TextBlock>Résultat de l'étudiant :</TextBlock>
-            
+        </WrapPanel>
+        <WrapPanel Margin="120,10,100,0">
+            <TextBlock x:Name="result"></TextBlock>
         </WrapPanel>
 
 
