@@ -27,6 +27,30 @@ namespace _3C4_TP1
 
         }
 
- 
+        private void res_Click(object sender, RoutedEventArgs e)
+        {
+            if (App.Current.LoggedInUser.Id.ToString() == IdBox.Text && App.Current.LoggedInUser.FirstName == nameBox.Text && App.Current.LoggedInUser.LastName == famNameBox.Text)
+            {
+                    if (MessageBox.Show("Are you sure you want to renitialize the password, the old password will be lost?",
+                        "Confirmation", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                    {
+                    string Fname = App.Current.LoggedInUser.FirstName;
+                    string resPass = (Fname.Substring(0, 1) + App.Current.LoggedInUser.LastName).ToLower();
+                    App.Current.LoggedInUser.Password = resPass;
+                    
+                        Close();
+                    }
+            }
+            else
+            {
+                MessageBox.Show("Informations arn't matching", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void annuler_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }
+

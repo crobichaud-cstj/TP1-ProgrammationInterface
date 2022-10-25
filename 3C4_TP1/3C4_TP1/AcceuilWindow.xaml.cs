@@ -67,12 +67,14 @@ namespace _3C4_TP1
         }
         private void ChangerMDP_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("TODO", "TODO", MessageBoxButton.OK, MessageBoxImage.Error);
+            var window = new ChangerMotDePasse();
+            window.Show();
         }
 
         private void ResMDP_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("TODO", "TODO", MessageBoxButton.OK, MessageBoxImage.Error);
+            var window = new RenitialiserMotDePasse();
+            window.Show();
         }
 
         private void updateCombox()
