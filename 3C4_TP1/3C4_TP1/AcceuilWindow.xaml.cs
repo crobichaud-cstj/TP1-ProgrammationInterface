@@ -82,14 +82,13 @@ namespace _3C4_TP1
             ListView1.Items.Clear();
             foreach (var d in App.Current.Courses)
             {
-                if (d.TeacherId == App.Current.LoggedInUser.Id)
-                {
+
                     if (d.Semester.ToString() == ComboBoxSemester.SelectedValue.ToString())
                     {
                         ListView1.Items.Add(d);
                     }
 
-                }
+
             }
         }
 
