@@ -37,6 +37,15 @@ namespace _3C4_TP1
             
         }
 
+        public void updateOnAddEva()
+        {
+            comboboxEva.Items.Clear();
+            foreach (Evaluation eva in currentCourse.Evaluations)
+            {
+                comboboxEva.Items.Add(eva);
+            }
+        }
+
 
 
         private void updateOnExam()
@@ -47,33 +56,50 @@ namespace _3C4_TP1
 
             nbExam = 0;
             totalExam = 0;
-
-            foreach (var s in currentCourse.StudentIds)
+            if (currentEva.StudentResults.Count > 0)
             {
-                if (currentEva.StudentResults[s] != null)
+                foreach (var s in currentEva.StudentResults)
                 {
-                    students.Add(App.Current.Students[s]);
-                    string str = s.ToString() + " - ";
-                    str += App.Current.Students[s].LastName + ", ";
-                    str += App.Current.Students[s].FirstName + " - ";
-                    str += +currentEva.StudentResults[s];
-                    totalExam += currentEva.StudentResults[s];
-                    nbExam++;
-                    listStud.Items.Add(str);
-                }
-                
-            }
-            currentStudent = students[0];
-            listStud.SelectedIndex = 0;
+                    StudentResult studentResult = new StudentResult();
+                    studentResult.Id = s.Key;
+                    studentResult.FirstName = App.Current.Students[s.Key].FirstName;
+                    studentResult.LastName = App.Current.Students[s.Key].LastName;
+                    studentResult.result = s.Value;
 
-            Moyen.Text = (totalExam / nbExam).ToString();
+                    students.Add(App.Current.Students[s.Key]);
+                    listStud.Items.Add(studentResult);
+
+                    totalExam = studentResult.result;
+                    nbExam++;
+                }
+                currentStudent = students[0];
+                listStud.SelectedIndex = 0;
+                Moyen.Text = (totalExam / nbExam).ToString();
+            }
+            else
+            {
+                Moyen.Text = "";
+            }
 
             updateOnStudent();
         }
 
+        private class StudentResult
+        {
+            public int Id;
+            public string FirstName = "";
+            public string LastName = "";
+            public int result = 0;
+
+            public override string ToString()
+            {
+                return Id + " - " + LastName + ", " + FirstName + " - " + result;
+            }
+        }
+
         private void updateOnStudent()
         {
-            if (currentStudent != null)
+            if (currentEva.StudentResults.Count()>0)
             {
 
 
@@ -93,21 +119,28 @@ namespace _3C4_TP1
                     int total = 0;
                     int nb = 0;
                     string moyen = "";
-                    foreach (var s in currentCourse.StudentIds)
+                    if (eva.StudentResults.Count() > 0)
                     {
-                        if (eva.StudentResults[s] != null)
+
+                        foreach (var s in eva.StudentResults)
                         {
-                            total += eva.StudentResults[s];
-                            nb++;
+                                total += s.Value;
+                                nb++;
                         }
+
+                        try 
+                        {
+                            totalResult += eva.StudentResults[currentStudent.Id];
+                            totalMoyen += (total / nb);
+                            totalPond += eva.Value;
+
+                            moyen = (total / nb).ToString();
+
+                            resultStr += eva.Name + "\t" + eva.StudentResults[currentStudent.Id] + "/" + eva.Value + "\t Moyenne : " + moyen + "\n";
+                        }
+                        catch
+                        {}
                     }
-                    totalResult += eva.StudentResults[currentStudent.Id];
-                    totalMoyen += (total / nb);
-                    totalPond += eva.Value;
-
-                    moyen = (total / nb).ToString();
-
-                    resultStr += eva.Name + "\t" + eva.StudentResults[currentStudent.Id] + "/" + eva.Value + "\t Moyenne : " + moyen + "\n";
 
                 }
                 resultStr += "Total\t" + totalResult + "/" + totalPond + "\t Moyenne : " + totalMoyen;
@@ -118,6 +151,7 @@ namespace _3C4_TP1
             {
                 Prenom.Text = "";
                 Nom.Text = "";
+                Iden.Text = "";
                 result.Text = "";
             }
         }
@@ -190,6 +224,20 @@ namespace _3C4_TP1
             
             updateOnExam();
             updateOnStudent();
+        }
+
+        private void addEva_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new AddEva(currentCourse);
+            window.Owner = this;
+            window.Show();
+        }
+
+        private void addResult_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new AddResult(currentCourse, currentEva);
+            window.Owner = this;
+            window.Show();
         }
     }
 }
