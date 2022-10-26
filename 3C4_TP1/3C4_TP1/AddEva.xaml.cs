@@ -20,11 +20,11 @@ namespace _3C4_TP1
     /// </summary>
     public partial class AddEva : Window
     {
-        int courId = 0;
+        object currentCourse;
         public AddEva(Course course)
         {
 
-            courId = Int16(course.Id);
+           currentCourse = course;
 
 
             InitializeComponent();
@@ -32,12 +32,27 @@ namespace _3C4_TP1
 
         private void add_Click(object sender, RoutedEventArgs e)
         {
-            App.Current.Courses[courId]
+            var eva = new Evaluation();
+            if (nameBox.Text != "" && pondBox.Text != "")
+            {
+                eva.Name = nameBox.Text;
+                eva.Value = Convert.ToInt32(pondBox.Text);
+            foreach (Course course in App.Current.Courses)
+            {
+                if (course == currentCourse && MessageBox.Show("Voulez vous vraiment ajouter l'évaluation", "Attention", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                {
+                    course.Evaluations.Add(eva);
+                    ((GestionCours)this.Owner).updateOnAddEva();
+                    Close();
+                }
+
+            }
+            }
         }
 
         private void abort_Click(object sender, RoutedEventArgs e)
         {
-
+            Close();
         }
     }
 }

@@ -37,6 +37,16 @@ namespace _3C4_TP1
             
         }
 
+        public void updateOnAddEva()
+        {
+            comboboxEva.Items.Clear();
+            foreach (Evaluation eva in currentCourse.Evaluations)
+            {
+                comboboxEva.Items.Add(eva);
+            }
+            comboboxEva.SelectedIndex = 0;
+        }
+
 
 
         private void updateOnExam()
@@ -47,10 +57,9 @@ namespace _3C4_TP1
 
             nbExam = 0;
             totalExam = 0;
-
-            foreach (var s in currentCourse.StudentIds)
+            if (currentEva.StudentResults.Count > 0)
             {
-                if (currentEva.StudentResults[s] != null)
+                foreach (var s in currentCourse.StudentIds)
                 {
                     students.Add(App.Current.Students[s]);
                     string str = s.ToString() + " - ";
@@ -61,19 +70,21 @@ namespace _3C4_TP1
                     nbExam++;
                     listStud.Items.Add(str);
                 }
-                
+                currentStudent = students[0];
+                listStud.SelectedIndex = 0;
+                Moyen.Text = (totalExam / nbExam).ToString();
             }
-            currentStudent = students[0];
-            listStud.SelectedIndex = 0;
-
-            Moyen.Text = (totalExam / nbExam).ToString();
+            else
+            {
+                Moyen.Text = "";
+            }
 
             updateOnStudent();
         }
 
         private void updateOnStudent()
         {
-            if (currentStudent != null)
+            if (currentEva.StudentResults.Count()>0)
             {
 
 
@@ -93,21 +104,26 @@ namespace _3C4_TP1
                     int total = 0;
                     int nb = 0;
                     string moyen = "";
-                    foreach (var s in currentCourse.StudentIds)
+                    if (eva.StudentResults.Count() > 0)
                     {
-                        if (eva.StudentResults[s] != null)
+
+                        foreach (var s in currentCourse.StudentIds)
                         {
-                            total += eva.StudentResults[s];
-                            nb++;
+                            if (eva.StudentResults[s] != null)
+                            {
+                                total += eva.StudentResults[s];
+                                nb++;
+                            }
                         }
+
+                        totalResult += eva.StudentResults[currentStudent.Id];
+                        totalMoyen += (total / nb);
+                        totalPond += eva.Value;
+
+                        moyen = (total / nb).ToString();
+
+                        resultStr += eva.Name + "\t" + eva.StudentResults[currentStudent.Id] + "/" + eva.Value + "\t Moyenne : " + moyen + "\n";
                     }
-                    totalResult += eva.StudentResults[currentStudent.Id];
-                    totalMoyen += (total / nb);
-                    totalPond += eva.Value;
-
-                    moyen = (total / nb).ToString();
-
-                    resultStr += eva.Name + "\t" + eva.StudentResults[currentStudent.Id] + "/" + eva.Value + "\t Moyenne : " + moyen + "\n";
 
                 }
                 resultStr += "Total\t" + totalResult + "/" + totalPond + "\t Moyenne : " + totalMoyen;
@@ -195,6 +211,7 @@ namespace _3C4_TP1
         private void addEva_Click(object sender, RoutedEventArgs e)
         {
             var window = new AddEva(currentCourse);
+            window.Owner = this;
             window.Show();
         }
 

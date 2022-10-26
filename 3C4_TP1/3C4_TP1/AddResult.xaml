@@ -38,8 +38,8 @@
         </WrapPanel>
 
         <WrapPanel Margin="0,10,0,10" HorizontalAlignment="Center">
-            <Button Click="change_Click"  x:Name="change">Changer</Button>
-            <Button Click="annuler_Click" Style="{StaticResource EmptyRoundedButtonStyle}">Annuler</Button>
+            <Button  x:Name="change">Changer</Button>
+            <Button  Style="{StaticResource EmptyRoundedButtonStyle}">Annuler</Button>
         </WrapPanel>
 
     </StackPanel>

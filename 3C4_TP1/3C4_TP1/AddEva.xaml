@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:_3C4_TP1"
         mc:Ignorable="d"
         Title="Mot de passe" 
-        Height="290" 
-        Width="350" 
+        Height="320" 
+        Width="370" 
         ResizeMode="NoResize"
         FontSize="17"
         Style="{StaticResource DefaultWindowStyle}">

@@ -17,7 +17,7 @@
     <StackPanel Background="#2B2B2E">
         <WrapPanel Margin="7,10,0,0">
             <TextBlock >Évaluation :</TextBlock>
-            <ComboBox VerticalAlignment="Center" SelectionChanged="comboboxEva_SelectionChanged" x:Name="comboboxEva" Width="180" Margin="10,0,0,0">
+            <ComboBox VerticalAlignment="Center" SelectionChanged="comboboxEva_SelectionChanged" x:Name="comboboxEva" Width="180" Margin="10,0,0,0" Background="#FF202124">
             </ComboBox>
             <Button x:Name="addEva" Click="addEva_Click" Margin="130,0,0,0" >Ajouter évaluation</Button>
         </WrapPanel>
@@ -27,8 +27,8 @@
             <TextBlock Margin="10,0,5,0" IsEnabled="False">Moyenne :</TextBlock>
             <TextBox  IsEnabled="False" x:Name="Moyen" Width="190"></TextBox>
         </WrapPanel>
-        <ListBox Height="130" SelectionChanged="listStud_SelectionChanged" x:Name="listStud" Margin="7,10,5,0" Width="auto">
-            
+        <ListBox Foreground="White" Background="#202124" Height="130" SelectionChanged="listStud_SelectionChanged" x:Name="listStud" Margin="7,10,5,0" Width="auto">
+
         </ListBox>
 
         <WrapPanel Margin="7,10,0,0">
