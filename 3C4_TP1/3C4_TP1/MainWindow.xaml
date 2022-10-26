@@ -31,7 +31,7 @@
 
         <WrapPanel Margin="0,10,0,10" HorizontalAlignment="Center">
             <Button Click="connect_Click" x:Name="connect">Se connecter</Button>
-            <Button Style="{StaticResource EmptyRoundedButtonStyle}">Mot de passe oublié</Button>
+            <Button Click="mdpOublie_Click" Style="{StaticResource EmptyRoundedButtonStyle}">Mot de passe oublié</Button>
         </WrapPanel>
 
     </StackPanel>

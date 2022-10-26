@@ -99,5 +99,12 @@ namespace _3C4_TP1
         {
             Login();
         }
+
+        private void mdpOublie_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new RenitialiserMotDePasse();
+            window.Show();
+            
+        }
     }
 }
