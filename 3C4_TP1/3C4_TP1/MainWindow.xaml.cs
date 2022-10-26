@@ -57,7 +57,7 @@ namespace _3C4_TP1
                 }
                 MessageBox.Show("Erreur", "Mauvais mot de passe ou non d'utilisateur", MessageBoxButton.OK, MessageBoxImage.Information);
             }
-            else if ((bool)teacherRadio.IsChecked)
+            else if ((bool)studentRadio.IsChecked)
             {
                 foreach (var student in App.Current.Students)
                 {
