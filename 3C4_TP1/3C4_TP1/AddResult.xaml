@@ -11,7 +11,7 @@
         ResizeMode="NoResize"
         FontSize="17"
         Style="{StaticResource DefaultWindowStyle}">
-    
+
 
     <StackPanel Background="#2B2B2E">
 
@@ -19,27 +19,24 @@
             <Line X1="400" Stroke="White" StrokeThickness="2" />
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="0,10,0,0" HorizontalAlignment="Center">
-            <TextBlock FontWeight="Bold" TextAlignment="Center"> Changer le mot de passe</TextBlock>
+            <TextBlock FontWeight="Bold" TextAlignment="Center">Ajouter un Résultat</TextBlock>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="0,10,0,10" HorizontalAlignment="Center">
             <Line X1="400" Stroke="White" StrokeThickness="2" />
         </StackPanel>
         <WrapPanel Margin="0,10,15,5" HorizontalAlignment="Right">
-            <TextBlock  Margin="0,0,10,0" FontWeight="Bold" Foreground="White">Ancien mot de passe :</TextBlock>
-            <PasswordBox x:Name="OldpassBox" Width="200"></PasswordBox>
+            <TextBlock  Margin="0,0,10,0" FontWeight="Bold" Foreground="White">Identifiant :</TextBlock>
+            <TextBox x:Name="identBox" Width="200"></TextBox>
         </WrapPanel>
         <WrapPanel Margin="0,0,15,5" HorizontalAlignment="Right">
-            <TextBlock  Margin="0,0,10,0" FontWeight="Bold" Foreground="White">Nouveau mot de passe :</TextBlock>
-            <PasswordBox x:Name="newPassBox" Width="200"></PasswordBox>
-        </WrapPanel>
-        <WrapPanel Margin="0,0,15,10" HorizontalAlignment="Right">
-            <TextBlock  Margin="0,0,10,0" FontWeight="Bold" Foreground="White">Confirmer :</TextBlock>
-            <PasswordBox x:Name="confPassBox" Width="200"></PasswordBox>
+            <TextBlock  Margin="0,0,10,0" FontWeight="Bold" Foreground="White">Résultat :</TextBlock>
+            <TextBox x:Name="resultBox" Width="200"></TextBox>
         </WrapPanel>
 
+
         <WrapPanel Margin="0,10,0,10" HorizontalAlignment="Center">
-            <Button  x:Name="change">Changer</Button>
-            <Button  Style="{StaticResource EmptyRoundedButtonStyle}">Annuler</Button>
+            <Button Click="add_Click"  x:Name="add">Ajouter</Button>
+            <Button Click="abort_Click" x:Name="abort" Style="{StaticResource EmptyRoundedButtonStyle}">Annuler</Button>
         </WrapPanel>
 
     </StackPanel>

@@ -23,9 +23,7 @@ namespace _3C4_TP1
         object currentCourse;
         public AddEva(Course course)
         {
-
            currentCourse = course;
-
 
             InitializeComponent();
         }
@@ -36,7 +34,15 @@ namespace _3C4_TP1
             if (nameBox.Text != "" && pondBox.Text != "")
             {
                 eva.Name = nameBox.Text;
-                eva.Value = Convert.ToInt32(pondBox.Text);
+                try
+                {
+                    eva.Value = Convert.ToInt32(pondBox.Text);
+                }
+                catch
+                {
+                    MessageBox.Show("Pondération non valide", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                
             foreach (Course course in App.Current.Courses)
             {
                 if (course == currentCourse && MessageBox.Show("Voulez vous vraiment ajouter l'évaluation", "Attention", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)

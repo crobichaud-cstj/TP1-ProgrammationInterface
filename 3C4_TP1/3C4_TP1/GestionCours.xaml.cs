@@ -44,7 +44,6 @@ namespace _3C4_TP1
             {
                 comboboxEva.Items.Add(eva);
             }
-            comboboxEva.SelectedIndex = 0;
         }
 
 
@@ -59,16 +58,19 @@ namespace _3C4_TP1
             totalExam = 0;
             if (currentEva.StudentResults.Count > 0)
             {
-                foreach (var s in currentCourse.StudentIds)
+                foreach (var s in currentEva.StudentResults)
                 {
-                    students.Add(App.Current.Students[s]);
-                    string str = s.ToString() + " - ";
-                    str += App.Current.Students[s].LastName + ", ";
-                    str += App.Current.Students[s].FirstName + " - ";
-                    str += +currentEva.StudentResults[s];
-                    totalExam += currentEva.StudentResults[s];
+                    StudentResult studentResult = new StudentResult();
+                    studentResult.Id = s.Key;
+                    studentResult.FirstName = App.Current.Students[s.Key].FirstName;
+                    studentResult.LastName = App.Current.Students[s.Key].LastName;
+                    studentResult.result = s.Value;
+
+                    students.Add(App.Current.Students[s.Key]);
+                    listStud.Items.Add(studentResult);
+
+                    totalExam = studentResult.result;
                     nbExam++;
-                    listStud.Items.Add(str);
                 }
                 currentStudent = students[0];
                 listStud.SelectedIndex = 0;
@@ -80,6 +82,19 @@ namespace _3C4_TP1
             }
 
             updateOnStudent();
+        }
+
+        private class StudentResult
+        {
+            public int Id;
+            public string FirstName = "";
+            public string LastName = "";
+            public int result = 0;
+
+            public override string ToString()
+            {
+                return Id + " - " + LastName + ", " + FirstName + " - " + result;
+            }
         }
 
         private void updateOnStudent()
@@ -107,22 +122,24 @@ namespace _3C4_TP1
                     if (eva.StudentResults.Count() > 0)
                     {
 
-                        foreach (var s in currentCourse.StudentIds)
+                        foreach (var s in eva.StudentResults)
                         {
-                            if (eva.StudentResults[s] != null)
-                            {
-                                total += eva.StudentResults[s];
+                                total += s.Value;
                                 nb++;
-                            }
                         }
 
-                        totalResult += eva.StudentResults[currentStudent.Id];
-                        totalMoyen += (total / nb);
-                        totalPond += eva.Value;
+                        try 
+                        {
+                            totalResult += eva.StudentResults[currentStudent.Id];
+                            totalMoyen += (total / nb);
+                            totalPond += eva.Value;
 
-                        moyen = (total / nb).ToString();
+                            moyen = (total / nb).ToString();
 
-                        resultStr += eva.Name + "\t" + eva.StudentResults[currentStudent.Id] + "/" + eva.Value + "\t Moyenne : " + moyen + "\n";
+                            resultStr += eva.Name + "\t" + eva.StudentResults[currentStudent.Id] + "/" + eva.Value + "\t Moyenne : " + moyen + "\n";
+                        }
+                        catch
+                        {}
                     }
 
                 }
@@ -217,7 +234,8 @@ namespace _3C4_TP1
 
         private void addResult_Click(object sender, RoutedEventArgs e)
         {
-            var window = new AddResult();
+            var window = new AddResult(currentCourse, currentEva);
+            window.Owner = this;
             window.Show();
         }
     }
