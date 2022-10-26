@@ -67,6 +67,7 @@ namespace _3C4_TP1
                         {
                             App.Current.LoggedInUser = student.Value;
                             var window = new AcceuilWindow();
+                            Close();
                             window.Show();
 
                             return;
@@ -83,6 +84,7 @@ namespace _3C4_TP1
                     {
                         App.Current.LoggedInUser = admin;
                         var window = new AdminWindow();
+                        Close();
                         window.Show();
 
                         return;
