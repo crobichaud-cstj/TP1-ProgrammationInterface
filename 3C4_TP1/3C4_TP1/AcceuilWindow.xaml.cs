@@ -86,7 +86,7 @@ namespace _3C4_TP1
                 {
                     if (d.Semester.ToString() == ComboBoxSemester.SelectedValue.ToString())
                     {
-                        ListView1.Items.Add(d.Id + " - gr. " + d.Group.ToString("D3"));
+                        ListView1.Items.Add(d);
                     }
 
                 }
@@ -97,7 +97,7 @@ namespace _3C4_TP1
         {
             foreach (var c in App.Current.Courses)
             {
-                if (c.Id == ListView1.SelectedItem)
+                if (c == ListView1.SelectedItem)
                 {
                     var window = new GestionCours(c);
                     window.Show();

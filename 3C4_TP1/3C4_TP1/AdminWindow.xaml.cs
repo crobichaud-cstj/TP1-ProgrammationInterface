@@ -26,7 +26,30 @@ namespace _3C4_TP1
 
         }
 
-       
+        private void modifEtu_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new ModifierEtudiant();
+            window.Show();
+        }
+
+        private void modifEnsei_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new ModifierEnseignant();
+            window.Show();
+        }
+
+        private void bonus_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void quit_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new MainWindow();
+            window.Show();
+            Close();
+
+        }
     }
 }
 

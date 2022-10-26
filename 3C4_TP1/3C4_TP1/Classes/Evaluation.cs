@@ -9,5 +9,12 @@ namespace _3C4_TP1
         public string Name = "";    // TP1
         public int Value;           // Valeur de l'evaluation dans le bulletin (exemple 10 pour 10%)
         public Dictionary<int, int> StudentResults = new Dictionary<int, int>(); // <Id, Result>
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
+
+   
 }

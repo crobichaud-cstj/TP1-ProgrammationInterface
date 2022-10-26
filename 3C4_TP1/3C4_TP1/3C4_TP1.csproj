@@ -60,6 +60,23 @@
 	    <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
 	    <SubType>Designer</SubType>
 	  </Page>
+	  <Page Update="NouvelEns.xaml">
+	    <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+	    <SubType>Designer</SubType>
+	  </Page>
+	  <Page Update="NouvelEtu.xaml">
+	    <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+	    <SubType>Designer</SubType>
+	  </Page>
+	  <Page Update="ModifierEnseignant.xaml">
+	    <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+	    <SubType>Designer</SubType>
+	  </Page>
+	  <Page Update="ModifierEtudiant.xaml">
+	    <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+	    <SubType>Designer</SubType>
+	    <Generator>MSBuild:Compile</Generator>
+	  </Page>
 	  <Page Update="RenitialiserMotDePasse.xaml">
 	    <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
 	    <SubType>Designer</SubType>

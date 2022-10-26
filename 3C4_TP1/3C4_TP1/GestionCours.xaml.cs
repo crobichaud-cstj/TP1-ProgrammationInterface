@@ -29,7 +29,7 @@ namespace _3C4_TP1
 
             foreach (Evaluation eva in currentCourse.Evaluations)
             {
-                comboboxEva.Items.Add(eva.Name);
+                comboboxEva.Items.Add(eva);
             }
             comboboxEva.SelectedIndex = 0;
 
@@ -126,7 +126,7 @@ namespace _3C4_TP1
         {
             foreach (Evaluation eva in currentCourse.Evaluations )
             {
-                if (eva.Name == comboboxEva.SelectedItem)
+                if (eva == comboboxEva.SelectedItem)
                 {
                     currentEva = eva;
                 }
