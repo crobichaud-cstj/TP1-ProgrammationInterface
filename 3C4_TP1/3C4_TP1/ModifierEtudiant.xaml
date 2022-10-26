@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:_3C4_TP1"
         mc:Ignorable="d"
         Title="MainWindow" 
-        Height="550" 
-        Width="635" 
+        Height="500" 
+        Width="600" 
         ResizeMode="NoResize"
         FontSize="17"
         Foreground="White"
@@ -18,16 +18,16 @@
 
         <WrapPanel Margin="7,10,0,0">
             <TextBlock Margin="0,0,5,0">Rechercher :</TextBlock>
-            <TextBox TextChanged="Recherche_TextChanged" x:Name="Ponde"  Width="250"></TextBox>
+            <TextBox TextChanged="Recherche_TextChanged" x:Name="recherche"  Width="250"></TextBox>
     
         </WrapPanel>
-        <ListBox Height="130" SelectionChanged="listStud_SelectionChanged" x:Name="listStud" Margin="7,10,5,0" Width="auto">
+        <ListBox Foreground="White" Background="#202124" Height="300" SelectionChanged="listStud_SelectionChanged" x:Name="listStud" Margin="7,10,5,0" Width="auto">
             
         </ListBox>
 
         <WrapPanel Margin="0,10,0,10" HorizontalAlignment="Center">
             <Button Click="ajout_Click"  x:Name="change">Ajouter</Button>
-            <Button Click="supp_Click" Style="{StaticResource EmptyRoundedButtonStyle}">Supperimer</Button>
+            <Button Click="supp_Click" Style="{StaticResource EmptyRoundedButtonStyle}">Suprimer</Button>
         </WrapPanel>
 
 

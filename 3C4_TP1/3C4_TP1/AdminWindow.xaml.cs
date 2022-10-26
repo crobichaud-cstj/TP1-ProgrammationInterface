@@ -34,7 +34,7 @@ namespace _3C4_TP1
 
         private void modifEnsei_Click(object sender, RoutedEventArgs e)
         {
-            var window = new MainWindow();
+            var window = new ModifierEnseignant();
             window.Show();
         }
 
@@ -48,6 +48,7 @@ namespace _3C4_TP1
             var window = new MainWindow();
             window.Show();
             Close();
+
         }
     }
 }
