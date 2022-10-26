@@ -82,13 +82,18 @@ namespace _3C4_TP1
             ListView1.Items.Clear();
             foreach (var d in App.Current.Courses)
             {
-
-                    if (d.Semester.ToString() == ComboBoxSemester.SelectedValue.ToString())
+                if (d.Semester.ToString() == ComboBoxSemester.SelectedValue.ToString())
+                {
+                    foreach (int id in d.StudentIds)
                     {
-                        ListView1.Items.Add(d);
+                        if (id == App.Current.LoggedInUser.Id || App.Current.LoggedInUser.Id == d.TeacherId)
+                        {
+                            ListView1.Items.Add(d);
+                            break;
+                        }
                     }
-
-
+                }
+                
             }
         }
 
@@ -98,8 +103,17 @@ namespace _3C4_TP1
             {
                 if (c == ListView1.SelectedItem)
                 {
-                    var window = new GestionCours(c);
-                    window.Show();
+                    if (App.Current.LoggedInUser.GetType() == typeof(Student))
+                    {
+                        var window = new GestionCoursStudent(c);
+                        window.Show();
+                    }
+                    else
+                    {
+                        var window = new GestionCours(c);
+                        window.Show();
+                    }
+                    
                 }
             }
             

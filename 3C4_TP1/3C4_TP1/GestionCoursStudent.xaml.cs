@@ -25,7 +25,7 @@ namespace _3C4_TP1
             foreach (Evaluation evaluation in course.Evaluations)
             {
                 total += evaluation.StudentResults[App.Current.LoggedInUser.Id];
-                int moyen = (evaluation.StudentResults.Skip(1).Sum(x => x.Value) / evaluation.StudentResults.Count) * 100;
+                int moyen = (evaluation.StudentResults.Sum(x => x.Value) / evaluation.StudentResults.Count);
                 totalMoyen += moyen;
                 totalPond += evaluation.Value;
 

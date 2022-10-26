@@ -39,7 +39,20 @@ namespace _3C4_TP1
         private void Login()
         {
             // TODO: effectuer la connexion ici par le bouton ou par la touche Enter
-            if ((bool)teacherRadio.IsChecked)
+            var admin = App.Current.Admin;
+            if (admin.LastName == usernameBox.Text.ToString() || "admin" == usernameBox.Text.ToString())
+            {
+                if (admin.LastName.ToLower() == passwordBox.Password.ToString())
+                {
+                    App.Current.LoggedInUser = admin;
+                    var window = new AdminWindow();
+                    Close();
+                    window.Show();
+
+                    return;
+                }
+            }
+            else if ((bool)teacherRadio.IsChecked)
             {
                 foreach (var teacher in App.Current.Teachers)
                 {
@@ -74,23 +87,10 @@ namespace _3C4_TP1
                         }
                     }
                 }
+                MessageBox.Show("Erreur", "Mauvais mot de passe ou non d'utilisateur", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else
             {
-                var admin = App.Current.Admin;
-                if (admin.LastName == usernameBox.Text.ToString() || "admin" == usernameBox.Text.ToString())
-                {
-                    if (admin.LastName.ToLower() == passwordBox.Password.ToString())
-                    {
-                        App.Current.LoggedInUser = admin;
-                        var window = new AdminWindow();
-                        Close();
-                        window.Show();
-
-                        return;
-                    }
-                }
-
                 MessageBox.Show("Erreur", "Mauvais mot de passe ou non d'utilisateur", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
