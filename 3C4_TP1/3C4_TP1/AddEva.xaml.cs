@@ -41,6 +41,7 @@ namespace _3C4_TP1
                 catch
                 {
                     MessageBox.Show("Pondération non valide", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
                 }
                 
             foreach (Course course in App.Current.Courses)

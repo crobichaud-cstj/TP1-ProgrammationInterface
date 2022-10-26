@@ -151,6 +151,7 @@ namespace _3C4_TP1
             {
                 Prenom.Text = "";
                 Nom.Text = "";
+                Iden.Text = "";
                 result.Text = "";
             }
         }
