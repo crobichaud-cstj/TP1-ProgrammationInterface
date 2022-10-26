@@ -1,0 +1,36 @@
+﻿<Window x:Class="_3C4_TP1.GestionCoursStudent"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_3C4_TP1"
+        mc:Ignorable="d"
+        Title="Gestion de cours" 
+        Height="350" 
+        Width="635" 
+        ResizeMode="NoResize"
+        FontSize="17"
+        Foreground="White"
+        Style="{StaticResource DefaultWindowStyle}">
+
+
+    <StackPanel Background="#2B2B2E">
+        <WrapPanel Margin="7,10,0,0">
+            <TextBlock >Identifiant :</TextBlock>
+            <TextBox IsEnabled="False" x:Name="Iden" Margin="10,0,15,0" Height="40" Width="190"></TextBox>
+
+        </WrapPanel>
+        <WrapPanel Margin="5,10,0,0">
+            <TextBlock IsEnabled="False" >Nom :</TextBlock>
+            <TextBox x:Name="Nom"  Margin="52,0,40,0" Height="40" Width="190"></TextBox>
+            <TextBlock IsEnabled="False" >Prénom :</TextBlock>
+            <TextBox x:Name="Prenom" Margin="10,0,0,0" Height="40" Width="190"></TextBox>
+        </WrapPanel>
+        <ListBox Foreground="White" Background="#202124" Height="130" x:Name="listExam" Margin="7,10,5,0" Width="auto">
+
+        </ListBox>
+
+
+
+    </StackPanel>
+</Window>
